@@ -1,0 +1,27 @@
+// Colors
+
+$black: #000000;
+$white: #ffffff;
+
+$teal: #1abc9c;
+$green: #2ecc71;
+$blue: #3498db;
+$purple: #8e44ad;
+$yellow: #f1c40f;
+$orange: #e67e22;
+$red: #c0392b;
+$gray: #7f8c8d;
+$grey: #7f8c8d;
+
+
+// Font Imports
+
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,500,700,900,400italic,700italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700);
+
+
+// Fonts
+
+$roboto-font-stack: 'Roboto', sans-serif !default;
+$roboto-condensed-font-stack: 'Roboto Condensed', sans-serif !default;
+$roboto-slab-font-stack: 'Roboto Slab', serif !default;

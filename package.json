@@ -1,0 +1,32 @@
+{
+  "name": "quickstart-gulp-jade-scss",
+  "version": "1.0.0",
+  "description": "Basic project template for gulp, jade, and scss workflow.",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.9.0",
+    "gulp-git": "^1.2.4",
+    "gulp-concat": "^2.5.2",
+    "gulp-glue": "^1.0.1",
+    "gulp-jade": "^1.0.1",
+    "gulp-open": "^0.3.2",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5"
+  },
+  "devDependencies": {
+    "gulp-sass": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/brandonpetty/gulp-stylus-jade-project.git"
+  },
+  "author": "Brandon Petty (@brandonpetty)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/brandonpetty/quickstart-gulp-jade-scss/issues"
+  },
+  "homepage": "https://github.com/brandonpetty/quickstart-gulp-jade-scss#readme"
+}

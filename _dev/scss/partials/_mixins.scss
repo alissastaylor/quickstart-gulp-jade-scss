@@ -1,0 +1,142 @@
+// Background Gradient
+// USE: @include background-gradient(color1, color2, 'type');
+// types: vertical, horizontal, radial
+
+@mixin background-gradient($startColor, $endColor, $orientation) {
+  background: $startColor;
+
+  @if $orientation == 'vertical' {
+    background: -webkit-linear-gradient(top, $startColor, $endColor);
+    background: linear-gradient(to bottom, $startColor, $endColor);
+  } @else if $orientation == 'horizontal' {
+    background: -webkit-linear-gradient(left, $startColor, $endColor);
+    background: linear-gradient(to right, $startColor, $endColor);
+  } @else {
+    background: -webkit-radial-gradient(center, ellipse cover, $startColor, $endColor);
+    background: radial-gradient(ellipse at center, $startColor, $endColor);
+  }
+}
+
+
+// Center Element - Horizontal
+// USE: @include center-horizontal;
+
+@mixin center-horizontal {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+// Center Element - Vertical
+// USE: @include center-vertical;
+
+@mixin center-vertical {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// Clearfix
+// USE: @include clearfix;
+
+@mixin clearfix {
+  *zoom: 1;
+
+  &:before, &:after {
+    content: ' ';
+    display: table;
+  }
+
+  &:after {
+    clear: both;
+  }
+}
+
+
+// Position Element
+// USE: @include position(absolute, top, right, bottom, left);
+
+@mixin position($type, $top: null, $right: null, $bottom: null, $left: null) {
+  position: $type;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+// Vendor Prefix
+// USE: @include prefix(transform, rotate(90deg), webkit ms);
+
+@mixin prefix($property, $value, $vendors: webkit moz ms o) {
+  @if $vendors {
+    @each $vendor in $vendors {
+      #{"-" + $vendor + "-" + $property}: #{$value};
+    }
+  }
+  #{$property}: #{$value};
+}
+
+
+// No Padding
+// USE: @extend .nopadding;
+
+.nopadding {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+// Animations & Keyframes (specific)
+// USE: @include keyframes(slide-down) { } & @include animation('slide-down 5s 3');
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes $animation-name {
+    @content;
+  }
+  @-moz-keyframes $animation-name {
+    @content;
+  }
+  @-ms-keyframes $animation-name {
+    @content;
+  }
+  @-o-keyframes $animation-name {
+    @content;
+  }
+  @keyframes $animation-name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
+
+// Transitions (specific)
+// USE: @include transition(color .3s ease);
+
+@mixin transition($args...) {
+  -webkit-transition: $args;
+  -moz-transition: $args;
+  -ms-transition: $args;
+  -o-transition: $args;
+  transition: $args;
+}
+
+
+// Cross-browser Opacity
+// USE: @include opacity(0.8);
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity=$opacity-ie); //IE8
+}
