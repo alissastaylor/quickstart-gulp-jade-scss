@@ -1,3 +1,1 @@
 // custom scripts
-
-$('brandon-petty')
