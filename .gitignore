@@ -1,4 +1,5 @@
 _dev/img
 _prod
+_src
 node_modules
 bower
